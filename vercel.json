@@ -1,35 +1,16 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "**/*.html",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/jointown_style",
+      "destination": "/jointown_style.html"
     },
     {
-      "src": "/jointown_style",
-      "dest": "/jointown_style.html"
-    },
-    {
-      "src": "/about_chuangmei",
-      "dest": "/about_chuangmei.html"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/chat",
-      "dest": "/api/index.py"
+      "source": "/about_chuangmei",
+      "destination": "/about_chuangmei.html"
     }
   ]
 }
