@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>创美医药 - 责任 专业 纪律 真实 进取</title>
+    <title>创美药业 - 责任 专业 纪律 真实 进取</title>
     <style>
         * {
             margin: 0;
@@ -43,10 +43,18 @@
         .top-nav a:hover {
             color: #007bff;
         }
+        
+        .top-nav a.active-lang {
+            color: #007bff;
+            font-weight: bold;
+            background: rgba(0, 123, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
 
         /* 主导航栏 */
         .main-nav {
-            background: #fff;
+            background: linear-gradient(135deg, #2c5aa0 0%, #4682b4 50%, #87ceeb 100%);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -69,13 +77,8 @@
 
         .logo img {
             height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c5aa0;
+            width: auto;
+            margin-right: 15px;
         }
 
         .nav-menu {
@@ -90,23 +93,26 @@
         }
 
         .nav-menu a {
-            color: #333;
+            color: white;
             text-decoration: none;
             padding: 20px 0;
             display: block;
             font-size: 16px;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
-        .nav-menu a:hover,
+        .nav-menu a:hover {
+            color: #f0f8ff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
+        }
+
         .nav-menu a.active {
-            color: #007bff;
-        }
-
-        .nav-menu .active {
-            background: #007bff;
+            background: rgba(255,255,255,0.2);
             color: white !important;
             padding: 20px 15px;
+            border-radius: 5px;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
         }
 
         /* 轮播图区域 */
@@ -572,6 +578,154 @@
             font-size: 24px;
         }
 
+        /* 新闻页面样式 */
+        .news-section {
+            padding: 20px 0;
+        }
+        
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-tab {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .category-tab:hover {
+            background: #e9ecef;
+            color: #333;
+        }
+        
+        .category-tab.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .news-list {
+            margin-top: 20px;
+        }
+        
+        .news-list .news-item {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            background: white;
+            display: block;
+        }
+        
+        .news-list .news-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .news-list .news-title {
+            color: #2c5aa0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: block;
+            line-height: 1.4;
+        }
+        
+        .news-list .news-title:hover {
+            color: #007bff;
+        }
+        
+        .news-list .news-item p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 15px;
+        }
+        
+        .news-source {
+             background: #f8f9fa;
+             padding: 4px 8px;
+             border-radius: 4px;
+             color: #666;
+             font-size: 12px;
+         }
+         
+         .news-date {
+             color: #999;
+             font-size: 12px;
+         }
+         
+         /* 新闻详情页面样式 */
+         .news-detail {
+             max-width: 800px;
+             margin: 0 auto;
+         }
+         
+         .news-detail-header {
+             margin-bottom: 30px;
+         }
+         
+         .back-btn {
+             background: #007bff;
+             color: white;
+             border: none;
+             padding: 8px 16px;
+             border-radius: 4px;
+             cursor: pointer;
+             font-size: 14px;
+             margin-bottom: 20px;
+             transition: background-color 0.3s ease;
+             display: block;
+             text-align: center;
+             width: 150px;
+         }
+         
+         .back-btn:hover {
+             background: #0056b3;
+         }
+         
+         .news-detail-title {
+             color: #2c5aa0;
+             font-size: 24px;
+             font-weight: bold;
+             line-height: 1.4;
+             margin: 0;
+         }
+         
+         .news-detail-content {
+             line-height: 1.8;
+             color: #333;
+         }
+         
+         .news-detail-content p {
+             margin-bottom: 20px;
+             text-align: justify;
+             font-size: 16px;
+         }
+         
+         .news-detail-content p:last-child {
+             margin-bottom: 0;
+         }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .main-nav .container {
@@ -626,7 +780,7 @@
     <nav class="main-nav">
         <div class="container">
             <div class="logo">
-                <div class="logo-text">🏥 创美医药</div>
+                <img src="图片1.png" alt="创美药业">
             </div>
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link active" id="home-link">首页</a></li>
@@ -665,7 +819,7 @@
                 </div>
                 <div class="section-content">
                     <div class="company-intro">
-                        <p>创美医药是一家专注于医药流通领域的现代化企业，致力于为客户提供优质的医药产品和服务。</p>
+                        <p>创美药业是一家专注于医药流通领域的现代化企业，致力于为客户提供优质的医药产品和服务。</p>
                     </div>
                 </div>
             </div>
@@ -679,7 +833,7 @@
                 <div class="section-content">
                     <ul class="news-list">
                         <li class="news-item">
-                            <a href="#" class="news-title">创美医药2024年营业收入突破500亿元，核心业务持续发力</a>
+                            <a href="#" class="news-title">创美药业2024年营业收入突破500亿元，核心业务持续发力</a>
                             <span class="news-date">2024-12-14</span>
                         </li>
                         <li class="news-item">
@@ -687,11 +841,11 @@
                             <span class="news-date">2024-12-06</span>
                         </li>
                         <li class="news-item">
-                            <a href="#" class="news-title">创美医药荣获"2024年度最佳医药流通企业"称号</a>
+                            <a href="#" class="news-title">创美药业荣获"2024年度最佳医药流通企业"称号</a>
                             <span class="news-date">2024-11-24</span>
                         </li>
                         <li class="news-item">
-                            <a href="#" class="news-title">深化合作，创美医药与多家知名药企签署战略协议</a>
+                            <a href="#" class="news-title">深化合作，创美药业与多家知名药企签署战略协议</a>
                             <span class="news-date">2024-11-15</span>
                         </li>
                     </ul>
@@ -824,6 +978,9 @@
                 // 重新绑定事件监听器
                 bindEventListeners();
                 
+                // 重新应用当前语言
+                switchLanguage(currentLanguage);
+                
                 // 滚动到顶部
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
@@ -954,8 +1111,131 @@
                 // 重新绑定事件监听器
                 bindEventListeners();
                 
+                // 应用当前语言设置
+                switchLanguage(currentLanguage);
+                
                 // 滚动到顶部
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 新闻资讯链接点击事件
+            const newsLink = document.querySelector('.nav-menu li:nth-child(3) a');
+            newsLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 构建新闻资讯的内容
+                const newsContent = `
+                    <div class="content-section news-section">
+                        <div class="section-header">
+                            <div class="section-icon"></div>
+                            <h2 class="section-title">新闻分类</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="category-tabs">
+                                <div class="category-tab active" data-category="all">全部新闻</div>
+                                <div class="category-tab" data-category="innovation">创新药物</div>
+                                <div class="category-tab" data-category="policy">政策法规</div>
+                                <div class="category-tab" data-category="market">市场动态</div>
+                                <div class="category-tab" data-category="investment">投融资</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <div class="section-header">
+                            <div class="section-icon"></div>
+                            <h2 class="section-title">最新资讯</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="news-list">
+                                <div class="news-item" data-category="market">
+                                     <h4 class="news-title" data-content="医药行业重回正增长详细内容：2024年中，我国医药制造业利润增长率时隔近三年再次回正。2021年末至2022年初，我国医药制造业利润增长率急跌至-20%，随后两年在'负增长'低谷徘徊，2023年初一度跌超-30%。期间，国内创新药行业经历了2015年以来最剧烈的一次气候变化。\n\n行业分析师认为，这一转变标志着医药行业正在走出低谷期，创新药企业的投资价值开始重新显现。随着政策环境的逐步改善和市场需求的恢复，预计2025年医药行业将迎来更加强劲的增长。\n\n从具体数据来看，2024年上半年医药制造业营业收入同比增长8.7%，利润总额增长12.3%，增速较2023年同期分别提高了5.2和15.8个百分点。其中，化学药品制剂制造、中成药生产、生物药品制造等细分领域均实现了不同程度的增长。\n\n业内专家表示，医药行业的复苏主要得益于以下几个因素：一是国家政策的持续支持，包括创新药审批加速、医保目录动态调整等；二是市场需求的稳步恢复，随着疫情影响逐渐减弱，医疗服务需求回升；三是企业自身的转型升级，通过加大研发投入、优化产品结构等方式提升竞争力。">医药行业重回正增长，创新药寒冬即将结束？</h4>
+                                     <p>2024年中，我国医药制造业利润增长率时隔近三年再次回正。2021年末至2022年初，我国医药制造业利润增长率急跌至-20%，随后两年在"负增长"低谷徘徊，2023年初一度跌超-30%。期间，国内创新药行业经历了2015年以来最剧烈的一次气候变化。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">医药魔方</span>
+                                         <span class="news-date">2024-11-02</span>
+                                     </div>
+                                 </div>
+                                
+                                <div class="news-item" data-category="innovation">
+                                     <h4 class="news-title" data-content="2025年有望国内获批的20款新药详细内容：2024年NMPA批准的创新药数量超110个，较去年大幅提升。国产新药达42款，进口新药则有69款。随着中国本土创新药企的崛起，全球首发在中国的创新药占比持续提高。\n\n预计2025年将有更多重磅新药在中国获批上市，包括信达生物的PD-1抗体新适应症、先声药业的创新抗肿瘤药物等。这些新药的上市将为患者带来更多治疗选择，同时推动中国医药产业的创新发展。\n\n其中，信达生物的信迪利单抗注射液有望在多个新适应症获批，包括食管鳞癌、胃癌等；先声药业的SIM0417片（CDK4/6抑制剂）预计将在乳腺癌领域获得突破；百济神州的替雷利珠单抗也将在更多瘤种中获得批准。\n\n业内专家认为，2025年将是中国创新药发展的关键一年，随着更多本土创新药的获批上市，中国医药产业的国际竞争力将进一步提升。">2025年有望国内获批的20款新药，信达生物、先声药业领跑</h4>
+                                     <p>2024年NMPA批准的创新药数量超110个，较去年大幅提升。国产新药达42款，进口新药则有69款。随着中国本土创新药企的崛起，全球首发在中国的创新药占比持续提高。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">摩熵医药</span>
+                                         <span class="news-date">2024-12-25</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="news-item" data-category="innovation">
+                                     <h4 class="news-title" data-content="恒瑞医药创新药泽美妥司他片获批上市详细内容：国家药品监督管理局通过优先审评审批程序附条件批准江苏恒瑞医药股份有限公司申报的1类创新药泽美妥司他片上市，该药品适用于既往接受过至少1线系统性治疗的复发或难治外周T细胞淋巴瘤成人患者。\n\n这是恒瑞医药在肿瘤治疗领域的又一重要突破，该药物的获批将为T细胞淋巴瘤患者提供新的治疗选择。恒瑞医药表示，将继续加大研发投入，推动更多创新药物的开发和上市。\n\n泽美妥司他片是一种选择性组蛋白去乙酰化酶抑制剂，通过调节基因表达来发挥抗肿瘤作用。临床试验数据显示，该药物在治疗复发或难治性外周T细胞淋巴瘤方面表现出良好的疗效和安全性。\n\n此次获批标志着恒瑞医药在血液肿瘤治疗领域取得重要进展，也为公司在创新药领域的布局增添了新的里程碑。">恒瑞医药创新药泽美妥司他片获批上市</h4>
+                                     <p>国家药品监督管理局通过优先审评审批程序附条件批准江苏恒瑞医药股份有限公司申报的1类创新药泽美妥司他片上市，该药品适用于既往接受过至少1线系统性治疗的复发或难治外周T细胞淋巴瘤成人患者。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">NMPA</span>
+                                         <span class="news-date">2024-08-29</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="news-item" data-category="innovation">
+                                     <h4 class="news-title" data-content="勃林格殷格翰宗艾替尼片获批详细内容：NMPA官网显示，勃林格殷格翰的宗艾替尼片的上市申请已获批准，用于治疗存在HER2激活突变且既往接受过至少一种系统治疗的不可切除的局部晚期或转移性非小细胞肺癌成人患者。该药物是全球首个且目前唯一获批的口服HER2酪氨酸激酶抑制剂。\n\n这一突破性药物的获批标志着HER2阳性肺癌治疗进入了新的时代，为患者提供了更加便利和有效的治疗选择。该药物的独特作用机制和良好的安全性profile使其成为该领域的重要里程碑。\n\n宗艾替尼片是一种高选择性、不可逆的HER2酪氨酸激酶抑制剂，专门针对HER2激活突变设计。临床研究显示，该药物在HER2突变的非小细胞肺癌患者中表现出显著的抗肿瘤活性。\n\n此次在中国的获批，将为中国HER2突变肺癌患者带来新的治疗希望，填补了这一细分领域的治疗空白。">勃林格殷格翰宗艾替尼片获批，全球首个HER2 TKI</h4>
+                                     <p>NMPA官网显示，勃林格殷格翰的宗艾替尼片的上市申请已获批准，用于治疗存在HER2激活突变且既往接受过至少一种系统治疗的不可切除的局部晚期或转移性非小细胞肺癌成人患者。该药物是全球首个且目前唯一获批的口服HER2酪氨酸激酶抑制剂。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">NMPA</span>
+                                         <span class="news-date">2024-08-29</span>
+                                     </div>
+                                 </div>
+                                
+                                <div class="news-item" data-category="policy">
+                                     <h4 class="news-title" data-content="2023-2024年医药行业政策回顾详细内容：2023年国谈结果显示，143个目录外药品参加了谈判，其中121个谈判/竞价成功，成功率84.6%，平均降价61.7%。医保目录调整和带量采购将继续进行，数量、范围都将扩大。\n\n政策专家分析认为，医保谈判和带量采购政策的持续推进，将进一步优化医药市场结构，促进药品价格合理回归，提高医保基金使用效率。同时，这也将推动医药企业加强创新研发，提升产品竞争力。\n\n2024年，国家医保局继续深化医保制度改革，完善药品集中采购机制。预计将有更多药品纳入集采范围，包括生物药、中成药等。同时，医保目录动态调整机制也将更加完善，为创新药进入医保提供更多机会。\n\n业内人士表示，随着政策环境的不断优化，医药行业将迎来更加健康、可持续的发展。">2023-2024年医药行业政策回顾：医保谈判与带量采购持续推进</h4>
+                                     <p>2023年国谈结果显示，143个目录外药品参加了谈判，其中121个谈判/竞价成功，成功率84.6%，平均降价61.7%。医保目录调整和带量采购将继续进行，数量、范围都将扩大。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">中国医药工业信息中心</span>
+                                         <span class="news-date">2024-01-15</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="news-item" data-category="market">
+                                     <h4 class="news-title" data-content="创新药市场蓬勃发展详细内容：据《2022-2027年中国创新药产业发展报告》，2022年市场规模达6785亿元，同比增7.6%。受政策、医保调整及研发投入增加影响，市场前景乐观。预计2023年将增至7097亿元，2024年达7534亿元。\n\n报告指出，中国创新药市场正处于快速发展期，随着国家对创新药研发的政策支持力度不断加大，以及企业研发投入的持续增加，预计未来几年市场将保持稳定增长态势。\n\n从细分领域来看，肿瘤药物仍是创新药市场的主要驱动力，占据了约40%的市场份额。免疫治疗、靶向治疗等新兴治疗方式的快速发展，为创新药市场注入了新的活力。\n\n同时，随着人口老龄化加剧和慢性病患病率上升，心血管、糖尿病、神经系统疾病等领域的创新药需求也在快速增长。">创新药市场蓬勃发展，2024年有望达7千亿元</h4>
+                                     <p>据《2022-2027年中国创新药产业发展报告》，2022年市场规模达6785亿元，同比增7.6%。受政策、医保调整及研发投入增加影响，市场前景乐观。预计2023年将增至7097亿元，2024年达7534亿元。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">产业研究院</span>
+                                         <span class="news-date">2024-03-10</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="news-item" data-category="investment">
+                                     <h4 class="news-title" data-content="BD热潮持续详细内容：继2023年BD首付款超过IPO成为国内创新药企第二大融资渠道之后，2024年开始，中国创新药license-out首付款总额持续超过一级市场融资总额。这背后，一方面是Biotech无奈出售，另一方面，也是跨国企业不断加码中国创新。\n\n业内专家认为，这一趋势反映了中国创新药研发实力的提升和国际认可度的增强。同时，也显示出在当前市场环境下，通过BD合作实现价值变现成为许多创新药企的重要选择。\n\n数据显示，2024年前三季度，中国创新药企对外授权交易总额超过200亿美元，其中首付款金额达到50亿美元，远超同期一级市场融资总额。这些交易涉及肿瘤、免疫、神经系统等多个治疗领域。\n\n分析师指出，随着中国创新药质量的不断提升，预计未来BD交易将更加活跃，成为中国创新药企业发展的重要推动力。">BD热潮持续，中国创新药license-out首付款超过一级市场融资</h4>
+                                     <p>继2023年BD首付款超过IPO成为国内创新药企第二大融资渠道之后，2024年开始，中国创新药license-out首付款总额持续超过一级市场融资总额。这背后，一方面是Biotech无奈出售，另一方面，也是跨国企业不断加码中国创新。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">医药魔方</span>
+                                         <span class="news-date">2024-10-15</span>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="news-item" data-category="innovation">
+                                     <h4 class="news-title" data-content="百济神州泽布替尼全球销售额突破10亿美元大关详细内容：泽布替尼作为百济神州的第一个'重磅炸弹'药物，自2019年11月在美国上市以来，销售额持续增长。2023年，泽布替尼全球销售额就已突破10亿美元大关，达13亿美元，快速跻身'重磅炸弹'药物行列。\n\n这一成就标志着中国创新药企在全球市场的重大突破，证明了中国自主研发的创新药物具备与国际先进药物竞争的实力。百济神州表示，将继续加大研发投入，推动更多创新药物走向全球市场。\n\n泽布替尼是一款BTK抑制剂，主要用于治疗多种血液肿瘤。该药物在全球多个国家和地区获得批准，包括美国、欧盟、中国等主要市场。其优异的疗效和安全性得到了全球医生和患者的认可。\n\n百济神州创始人王晓东表示，泽布替尼的成功为中国创新药企业树立了标杆，证明中国企业有能力开发出具有全球竞争力的创新药物。">百济神州泽布替尼全球销售额突破10亿美元大关</h4>
+                                     <p>泽布替尼作为百济神州的第一个"重磅炸弹"药物，自2019年11月在美国上市以来，销售额持续增长。2023年，泽布替尼全球销售额就已突破10亿美元大关，达13亿美元，快速跻身"重磅炸弹"药物行列。</p>
+                                     <div class="news-meta">
+                                         <span class="news-source">百济神州</span>
+                                         <span class="news-date">2024-02-20</span>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // 替换主内容区域
+                document.querySelector('.content-left').innerHTML = newsContent;
+                
+                // 更新导航高亮
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 重新绑定事件监听器
+                bindNewsEventListeners();
+                
+                // 应用当前语言设置
+                switchLanguage(currentLanguage);
             });
             
 
@@ -983,11 +1263,799 @@
                 });
             }
             
+            // 绑定新闻页面事件监听器的函数
+            function bindNewsEventListeners() {
+                // 分类标签点击事件
+                const categoryTabs = document.querySelectorAll('.category-tab');
+                categoryTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // 移除所有活跃状态
+                        categoryTabs.forEach(t => t.classList.remove('active'));
+                        // 添加当前活跃状态
+                        this.classList.add('active');
+                        
+                        const category = this.getAttribute('data-category');
+                        const newsItems = document.querySelectorAll('.news-item');
+                        
+                        newsItems.forEach(item => {
+                            if (category === 'all' || item.getAttribute('data-category') === category) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+                
+                // 新闻标题点击事件
+                 const newsTitles = document.querySelectorAll('.news-title');
+                 newsTitles.forEach(title => {
+                     title.addEventListener('click', function() {
+                         const newsTitle = this.textContent;
+                         const newsContent = this.getAttribute('data-content');
+                         
+                         if (newsContent) {
+                             // 显示新闻详情
+                             showNewsDetail(newsTitle, newsContent);
+                         } else {
+                             alert('新闻详情页面开发中...');
+                         }
+                     });
+                 });
+             }
+             
+             // 显示新闻详情的函数
+             function showNewsDetail(title, content) {
+                 const detailContent = `
+                     <div class="content-section">
+                         <div class="section-header">
+                             <div class="section-icon"></div>
+                             <h2 class="section-title">新闻详情</h2>
+                         </div>
+                         <div class="section-content">
+                             <div class="news-detail">
+                                 <div class="news-detail-header">
+                                     <button class="back-btn" onclick="goBackToNews()">← 返回新闻列表</button>
+                                     <h3 class="news-detail-title">${title}</h3>
+                                 </div>
+                                 <div class="news-detail-content">
+                                     ${content.split('\\n').map(paragraph => `<p>${paragraph}</p>`).join('')}
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 `;
+                 
+                 // 替换主内容区域
+                 document.querySelector('.content-left').innerHTML = detailContent;
+             }
+             
             // 初始绑定事件监听器
             bindEventListeners();
 
 
         });
+        
+        // 返回新闻列表的函数 - 定义在全局作用域
+        function goBackToNews() {
+            // 重新触发新闻资讯链接点击事件
+            const newsLink = document.querySelector('.nav-menu li:nth-child(3) a');
+            if (newsLink) {
+                newsLink.click();
+            }
+        }
+        
+        // 多语言内容对象
+        const languageContent = {
+            'zh-cn': {
+                title: '创美药业 - 责任 专业 纪律 真实 进取',
+                heroTitle: '责任 专业 纪律 真实 进取',
+                heroSubtitle: 'Responsibility Professional Discipline Truth Enterprising',
+                navItems: ['首页', '关于创美', '新闻资讯', '企业招聘', '人才招聘', '投资者关系', '联系我们'],
+                companyIntro: '公司简介',
+                companyDynamics: '公司动态',
+                coreBusiness: '核心业务',
+                companyIntroText: '创美药业是一家专注于医药流通领域的现代化企业，致力于为客户提供优质的医药产品和服务。',
+                heroImages: ['医疗设备<br>监控中心', '专业团队<br>协作办公', '现代化<br>生产车间', '智能物流<br>配送系统'],
+                newsItems: [
+                    '创美药业2024年营业收入突破500亿元，核心业务持续发力',
+                    '智慧医疗，数字化转型助力医药流通行业升级',
+                    '创美药业荣获"2024年度最佳医药流通企业"称号',
+                    '深化合作，创美药业与多家知名药企签署战略协议'
+                ],
+                businessItems: {
+                    titles: ['药品分销', '医疗器械', '物流配送', '数据服务'],
+                    descriptions: [
+                        '专业的药品流通服务，覆盖处方药、非处方药等全品类',
+                        '提供高品质医疗设备和器械的销售及售后服务',
+                        '现代化仓储物流体系，确保药品安全高效配送',
+                        '基于大数据的医药市场分析和决策支持服务'
+                    ]
+                },
+                sidebarItems: {
+                    titles: ['企业邮箱', '供应商服务', '药检查询', '企业QA'],
+                    descriptions: [
+                        '安全可靠的企业邮箱服务',
+                        '为供应商提供专业的合作平台',
+                        '快速查询药品检验信息',
+                        '常见问题解答和在线客服'
+                    ],
+                    buttons: ['立即登录', '了解更多', '开始查询', '获取帮助']
+                },
+                aboutPage: {
+                    sectionTitles: ['公司概况', '企业规模', '发展战略', '发展历程', '领导团队', '主营业务', '联系我们'],
+                    // 企业规模内容
+                    scaleContent: {
+                        employees: '员工总数超过2,000人',
+                        customers: '服务客户超过14,429家',
+                        coverage: '业务覆盖华南地区及福建省周边地区',
+                        branches: '在广州、珠海、惠州、佛山、深圳等地设有分支机构'
+                    },
+                    // 发展战略内容
+                    strategyContent: {
+                        vision: '成为中国领先的医药流通企业',
+                        mission: '为客户提供优质的医药产品和专业服务',
+                        values: '诚信、专业、创新、共赢',
+                        goals: '持续扩大市场份额，提升服务质量'
+                    },
+                    // 发展历程内容
+                    historyContent: {
+                        founded: '1995年成立于广东汕头',
+                        listing: '2014年在香港联交所主板上市（股份代号：2289.HK）',
+                        expansion: '逐步扩展至华南地区主要城市',
+                        innovation: '2015年推出"创美e药"B2B电子商务平台'
+                    },
+                    // 领导团队内容
+                    teamContent: {
+                        ceo: '首席执行官：具有丰富的医药行业经验',
+                        management: '管理团队：由资深行业专家组成',
+                        expertise: '专业领域：医药分销、物流管理、电子商务',
+                        experience: '平均从业经验超过15年'
+                    },
+                    // 主营业务内容
+                    businessContent: {
+                        distribution: {
+                            title: '医药分销',
+                            description: '为医疗机构、零售药店等提供医药产品分销服务，建立了覆盖华南地区的分销网络。'
+                        },
+                        logistics: {
+                            title: '第三方物流',
+                            description: '提供专业的医药物流服务，包括仓储、配送、冷链运输等，确保药品质量和安全。'
+                        },
+                        consulting: {
+                            title: '咨询服务',
+                            description: '为客户提供医药行业咨询服务，包括市场分析、政策解读、业务优化等专业建议。'
+                        },
+                        ecommerce: {
+                            title: 'B2B电子商务平台',
+                            description: '"创美e药"B2B电子商务平台于2015年开始运营，截至2016年已有4,759位注册客户，主要为零售药店。该平台为客户提供更便利的服务，优化用户体验，提高系统稳定性，拓宽客户群，2016年贡献营业额约1.77亿人民币。'
+                        }
+                    },
+                    // 联系我们内容
+                    contactContent: {
+                        headquarters: {
+                            title: '总部地址',
+                            address: '广东省汕头市龙湖区珠津工业区\n创美药业股份有限公司'
+                        },
+                        branches: {
+                            title: '分支机构',
+                            locations: '广州 | 珠海 | 惠州 | 佛山 | 深圳\n覆盖华南地区及福建省周边地区'
+                        },
+                        stock: {
+                            title: '股票信息',
+                            info: '香港联交所主板上市\n股份代号：2289.HK'
+                        },
+                        business: {
+                            title: '业务咨询',
+                            services: '医药分销 | 第三方物流\n产品咨询 | 电商平台服务'
+                        },
+                        service: {
+                            title: '客户服务',
+                            info: '服务客户超过14,429家\n分销商 | 零售药店 | 医疗机构'
+                        },
+                        honor: {
+                            title: '企业荣誉',
+                            awards: '2019年广东企业500强 第297位\n2019年广东民营企业100强 第82位'
+                        }
+                    }
+                },
+                newsPage: {
+                    categoryTabs: ['全部新闻', '创新药物', '政策法规', '市场动态', '投融资'],
+                    sectionTitles: ['新闻分类', '最新资讯'],
+                    newsDetailTitle: '新闻详情',
+                    backButton: '← 返回新闻列表',
+                    // 新闻详细内容
+                    newsContent: [
+                        {
+                            title: '医药行业重回正增长，创新药寒冬即将结束？',
+                            summary: '2024年中，我国医药制造业利润增长率时隔近三年再次回正。2021年末至2022年初，我国医药制造业利润增长率急跌至-20%，随后两年在"负增长"低谷徘徊，2023年初一度跌超-30%。期间，国内创新药行业经历了2015年以来最剧烈的一次气候变化。',
+                            source: '医药魔方',
+                            date: '2024-11-02'
+                        },
+                        {
+                            title: '2025年有望国内获批的20款新药，信达生物、先声药业领跑',
+                            summary: '2024年NMPA批准的创新药数量超110个，较去年大幅提升。国产新药达42款，进口新药则有69款。随着中国本土创新药企的崛起，全球首发在中国的创新药占比持续提高。',
+                            source: '摩熵医药',
+                            date: '2024-12-25'
+                        },
+                        {
+                            title: '恒瑞医药创新药泽美妥司他片获批上市',
+                            summary: '国家药品监督管理局通过优先审评审批程序附条件批准江苏恒瑞医药股份有限公司申报的1类创新药泽美妥司他片上市，该药品适用于既往接受过至少1线系统性治疗的复发或难治外周T细胞淋巴瘤成人患者。',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: '勃林格殷格翰宗艾替尼片获批，全球首个HER2 TKI',
+                            summary: 'NMPA官网显示，勃林格殷格翰的宗艾替尼片的上市申请已获批准，用于治疗存在HER2激活突变且既往接受过至少一种系统治疗的不可切除的局部晚期或转移性非小细胞肺癌成人患者。该药物是全球首个且目前唯一获批的口服HER2酪氨酸激酶抑制剂。',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: '2023-2024年医药行业政策回顾：医保谈判与带量采购持续推进',
+                            summary: '2023年国谈结果显示，143个目录外药品参加了谈判，其中121个谈判/竞价成功，成功率84.6%，平均降价61.7%。医保目录调整和带量采购将继续进行，数量、范围都将扩大。',
+                            source: '中国医药工业信息中心',
+                            date: '2024-01-15'
+                        },
+                        {
+                            title: '创新药市场蓬勃发展，2024年有望达7千亿元',
+                            summary: '据《2022-2027年中国创新药产业发展报告》，2022年市场规模达6785亿元，同比增7.6%。受政策、医保调整及研发投入增加影响，市场前景乐观。预计2023年将增至7097亿元，2024年达7534亿元。',
+                            source: '产业研究院',
+                            date: '2024-03-10'
+                        },
+                        {
+                            title: 'BD热潮持续，中国创新药license-out首付款超过一级市场融资',
+                            summary: '继2023年BD首付款超过IPO成为国内创新药企第二大融资渠道之后，2024年开始，中国创新药license-out首付款总额持续超过一级市场融资总额。这背后，一方面是Biotech无奈出售，另一方面，也是跨国企业不断加码中国创新。',
+                            source: '医药魔方',
+                            date: '2024-10-15'
+                        },
+                        {
+                            title: '百济神州泽布替尼全球销售额突破10亿美元大关',
+                            summary: '泽布替尼作为百济神州的第一个"重磅炸弹"药物，自2019年11月在美国上市以来，销售额持续增长。2023年，泽布替尼全球销售额就已突破10亿美元大关，达13亿美元，快速跻身"重磅炸弹"药物行列。',
+                            source: '百济神州',
+                            date: '2024-02-20'
+                        }
+                    ]
+                }
+            },
+            'zh-tw': {
+                title: '創美藥業 - 責任 專業 紀律 真實 進取',
+                heroTitle: '責任 專業 紀律 真實 進取',
+                heroSubtitle: 'Responsibility Professional Discipline Truth Enterprising',
+                navItems: ['首頁', '關於創美', '新聞資訊', '企業招聘', '人才招聘', '投資者關係', '聯繫我們'],
+                companyIntro: '公司簡介',
+                companyDynamics: '公司動態',
+                coreBusiness: '核心業務',
+                companyIntroText: '創美藥業是一家專注於醫藥流通領域的現代化企業，致力於為客戶提供優質的醫藥產品和服務。',
+                heroImages: ['醫療設備<br>監控中心', '專業團隊<br>協作辦公', '現代化<br>生產車間', '智能物流<br>配送系統'],
+                newsItems: [
+                    '創美藥業2024年營業收入突破500億元，核心業務持續發力',
+                    '智慧醫療，數字化轉型助力醫藥流通行業升級',
+                    '創美藥業榮獲"2024年度最佳醫藥流通企業"稱號',
+                    '深化合作，創美藥業與多家知名藥企簽署戰略協議'
+                ],
+                businessItems: {
+                    titles: ['藥品分銷', '醫療器械', '物流配送', '數據服務'],
+                    descriptions: [
+                        '專業的藥品流通服務，覆蓋處方藥、非處方藥等全品類',
+                        '提供高品質醫療設備和器械的銷售及售後服務',
+                        '現代化倉儲物流體系，確保藥品安全高效配送',
+                        '基於大數據的醫藥市場分析和決策支持服務'
+                    ]
+                },
+                sidebarItems: {
+                    titles: ['企業郵箱', '供應商服務', '藥檢查詢', '企業QA'],
+                    descriptions: [
+                        '安全可靠的企業郵箱服務',
+                        '為供應商提供專業的合作平台',
+                        '快速查詢藥品檢驗信息',
+                        '常見問題解答和在線客服'
+                    ],
+                    buttons: ['立即登錄', '了解更多', '開始查詢', '獲取幫助']
+                },
+                aboutPage: {
+                    sectionTitles: ['公司概況', '企業規模', '發展戰略', '發展歷程', '領導團隊', '主營業務', '聯繫我們'],
+                    businessContent: {
+                        distribution: {
+                            title: '醫藥分銷',
+                            description: '為醫療機構、零售藥店等提供醫藥產品分銷服務，建立了覆蓋華南地區的分銷網絡。'
+                        },
+                        logistics: {
+                            title: '第三方物流',
+                            description: '提供專業的醫藥物流服務，包括倉儲、配送、冷鏈運輸等，確保藥品質量和安全。'
+                        },
+                        consulting: {
+                            title: '諮詢服務',
+                            description: '為客戶提供醫藥行業諮詢服務，包括市場分析、政策解讀、業務優化等專業建議。'
+                        },
+                        ecommerce: {
+                            title: 'B2B電子商務平台',
+                            description: '創美e藥平台為客戶提供便捷的在線採購服務，實現醫藥流通的數字化轉型。'
+                        }
+                    },
+                    contactContent: {
+                        headquarters: {
+                            title: '總部地址',
+                            address: '廣東省汕頭市龍湖區泰山路52號<br>郵編：515041'
+                        },
+                        branches: {
+                            title: '分支機構',
+                            locations: '廣州 | 珠海 | 惠州 | 佛山 | 深圳<br>覆蓋華南地區主要城市'
+                        },
+                        stock: {
+                            title: '股票信息',
+                            info: '香港聯交所主板上市<br>股份代號：2289.HK'
+                        },
+                        business: {
+                            title: '業務諮詢',
+                            services: '醫藥分銷 | 物流服務 | 電商平台<br>專業團隊為您提供優質服務'
+                        },
+                        service: {
+                            title: '客戶服務',
+                            info: '服務客戶超過14,429家<br>分銷商 | 零售藥店 | 醫療機構'
+                        },
+                        honor: {
+                            title: '企業榮譽',
+                            awards: '2019年廣東企業500強 第297位<br>2019年廣東民營企業100強 第82位'
+                        }
+                    }
+                },
+                newsPage: {
+                    categoryTabs: ['全部新聞', '創新藥物', '政策法規', '市場動態', '投融資'],
+                    sectionTitles: ['新聞分類', '最新資訊'],
+                    newsDetailTitle: '新聞詳情',
+                    backButton: '← 返回新聞列表',
+                    newsContent: [
+                        {
+                            title: '醫藥行業重回正增長，創新藥寒冬即將結束？',
+                            summary: '2024年中，我國醫藥製造業利潤增長率時隔近三年再次回正。2021年末至2022年初，我國醫藥製造業利潤增長率急跌至-20%，隨後兩年在「負增長」低谷徘徊，2023年初一度跌超-30%。期間，國內創新藥行業經歷了2015年以來最劇烈的一次氣候變化。',
+                            source: '醫藥魔方',
+                            date: '2024-11-02'
+                        },
+                        {
+                            title: '2025年有望國內獲批的20款新藥，信達生物、先聲藥業領跑',
+                            summary: '2024年NMPA批准的創新藥數量超110個，較去年大幅提升。國產新藥達42款，進口新藥則有69款。隨著中國本土創新藥企的崛起，全球首發在中國的創新藥占比持續提高。',
+                            source: '摩熵醫藥',
+                            date: '2024-12-25'
+                        },
+                        {
+                            title: '恆瑞醫藥創新藥澤美妥司他片獲批上市',
+                            summary: '國家藥品監督管理局通過優先審評審批程序附條件批准江蘇恆瑞醫藥股份有限公司申報的1類創新藥澤美妥司他片上市，該藥品適用於既往接受過至少1線系統性治療的復發或難治外周T細胞淋巴瘤成人患者。',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: '勃林格殷格翰宗艾替尼片獲批，全球首個HER2 TKI',
+                            summary: 'NMPA官網顯示，勃林格殷格翰的宗艾替尼片的上市申請已獲批准，用於治療存在HER2激活突變且既往接受過至少一種系統治療的不可切除的局部晚期或轉移性非小細胞肺癌成人患者。該藥物是全球首個且目前唯一獲批的口服HER2酪氨酸激酶抑制劑。',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: '2023-2024年醫藥行業政策回顧：醫保談判與帶量採購持續推進',
+                            summary: '2023年國談結果顯示，143個目錄外藥品參加了談判，其中121個談判/競價成功，成功率84.6%，平均降價61.7%。醫保目錄調整和帶量採購將繼續進行，數量、範圍都將擴大。',
+                            source: '中國醫藥工業信息中心',
+                            date: '2024-01-15'
+                        },
+                        {
+                            title: '創新藥市場蓬勃發展，2024年有望達7千億元',
+                            summary: '據《2022-2027年中國創新藥產業發展報告》，2022年市場規模達6785億元，同比增7.6%。受政策、醫保調整及研發投入增加影響，市場前景樂觀。預計2023年將增至7097億元，2024年達7534億元。',
+                            source: '產業研究院',
+                            date: '2024-03-10'
+                        },
+                        {
+                            title: 'BD熱潮持續，中國創新藥license-out首付款超過一級市場融資',
+                            summary: '繼2023年BD首付款超過IPO成為國內創新藥企第二大融資渠道之後，2024年開始，中國創新藥license-out首付款總額持續超過一級市場融資總額。這背後，一方面是Biotech無奈出售，另一方面，也是跨國企業不斷加碼中國創新。',
+                            source: '醫藥魔方',
+                            date: '2024-10-15'
+                        },
+                        {
+                            title: '百濟神州澤布替尼全球銷售額突破10億美元大關',
+                            summary: '澤布替尼作為百濟神州的第一個「重磅炸彈」藥物，自2019年11月在美國上市以來，銷售額持續增長。2023年，澤布替尼全球銷售額就已突破10億美元大關，達13億美元，快速躋身「重磅炸彈」藥物行列。',
+                            source: '百濟神州',
+                            date: '2024-02-20'
+                        }
+                    ]
+                }
+            },
+            'en': {
+                title: 'Chuangmei Pharmacy - Responsibility Professional Discipline Truth Enterprising',
+                heroTitle: 'Responsibility Professional Discipline Truth Enterprising',
+                heroSubtitle: 'Creating Value Through Innovation and Excellence',
+                navItems: ['Home', 'About Us', 'News', 'Corporate Recruitment', 'Talent Recruitment', 'Investor Relations', 'Contact Us'],
+                companyIntro: 'Company Profile',
+                companyDynamics: 'Company News',
+                coreBusiness: 'Core Business',
+                companyIntroText: 'Chuangmei Pharmacy is a modern enterprise focused on pharmaceutical distribution, committed to providing high-quality pharmaceutical products and services to customers.',
+                heroImages: ['Medical Equipment<br>Monitoring Center', 'Professional Team<br>Collaborative Office', 'Modern<br>Production Workshop', 'Smart Logistics<br>Distribution System'],
+                newsItems: [
+                    'Chuangmei Pharmacy\'s 2024 revenue exceeds 50 billion yuan, core business continues to grow',
+                    'Smart healthcare, digital transformation helps upgrade pharmaceutical distribution industry',
+                    'Chuangmei Pharmacy wins "2024 Best Pharmaceutical Distribution Enterprise" award',
+                    'Deepening cooperation, Chuangmei Pharmacy signs strategic agreements with well-known pharmaceutical companies'
+                ],
+                businessItems: {
+                    titles: ['Drug Distribution', 'Medical Devices', 'Logistics & Delivery', 'Data Services'],
+                    descriptions: [
+                        'Professional pharmaceutical distribution services covering prescription drugs, OTC drugs and all categories',
+                        'Providing high-quality medical equipment and device sales and after-sales services',
+                        'Modern warehousing and logistics system ensuring safe and efficient drug delivery',
+                        'Big data-based pharmaceutical market analysis and decision support services'
+                    ]
+                },
+                sidebarItems: {
+                    titles: ['Corporate Email', 'Supplier Services', 'Drug Inspection', 'Corporate QA'],
+                    descriptions: [
+                        'Secure and reliable corporate email services',
+                        'Professional cooperation platform for suppliers',
+                        'Quick inquiry of drug inspection information',
+                        'FAQ and online customer service'
+                    ],
+                    buttons: ['Login Now', 'Learn More', 'Start Query', 'Get Help']
+                },
+                aboutPage: {
+                    sectionTitles: ['Company Overview', 'Enterprise Scale', 'Development Strategy', 'Development History', 'Leadership Team', 'Main Business', 'Contact Us'],
+                    businessContent: {
+                        distribution: {
+                            title: 'Pharmaceutical Distribution',
+                            description: 'Providing pharmaceutical product distribution services to medical institutions and retail pharmacies, establishing a distribution network covering South China.'
+                        },
+                        logistics: {
+                            title: 'Third-party Logistics',
+                            description: 'Providing professional pharmaceutical logistics services including warehousing, distribution, and cold chain transportation to ensure drug quality and safety.'
+                        },
+                        consulting: {
+                            title: 'Consulting Services',
+                            description: 'Providing pharmaceutical industry consulting services including market analysis, policy interpretation, and business optimization advice.'
+                        },
+                        ecommerce: {
+                            title: 'B2B E-commerce Platform',
+                            description: 'Chuangmei e-Pharmacy platform provides convenient online procurement services for customers, enabling digital transformation of pharmaceutical distribution.'
+                        }
+                    },
+                    contactContent: {
+                        headquarters: {
+                            title: 'Headquarters Address',
+                            address: 'No. 52 Taishan Road, Longhu District, Shantou City, Guangdong Province<br>Postal Code: 515041'
+                        },
+                        branches: {
+                            title: 'Branch Offices',
+                            locations: 'Guangzhou | Zhuhai | Huizhou | Foshan | Shenzhen<br>Covering major cities in South China'
+                        },
+                        stock: {
+                            title: 'Stock Information',
+                            info: 'Listed on Hong Kong Stock Exchange Main Board<br>Stock Code: 2289.HK'
+                        },
+                        business: {
+                            title: 'Business Inquiry',
+                            services: 'Pharmaceutical Distribution | Logistics Services | E-commerce Platform<br>Professional team providing quality services'
+                        },
+                        service: {
+                            title: 'Customer Service',
+                            info: 'Serving over 14,429 customers<br>Distributors | Retail Pharmacies | Medical Institutions'
+                        },
+                        honor: {
+                            title: 'Corporate Honors',
+                            awards: '2019 Guangdong Top 500 Enterprises Ranked 297th<br>2019 Guangdong Top 100 Private Enterprises Ranked 82nd'
+                        }
+                    }
+                },
+                newsPage: {
+                    categoryTabs: ['All News', 'Innovative Drugs', 'Policies & Regulations', 'Market Dynamics', 'Investment & Financing'],
+                    sectionTitles: ['News Categories', 'Latest News'],
+                    newsDetailTitle: 'News Details',
+                    backButton: '← Back to News List',
+                    newsContent: [
+                        {
+                            title: 'Pharmaceutical Industry Returns to Positive Growth, Is the Innovation Drug Winter Coming to an End?',
+                            summary: 'In mid-2024, China\'s pharmaceutical manufacturing industry profit growth rate turned positive again after nearly three years. From late 2021 to early 2022, the profit growth rate plummeted to -20%, then lingered in negative growth for two years, once dropping below -30% in early 2023. During this period, the domestic innovative drug industry experienced the most dramatic climate change since 2015.',
+                            source: 'Pharmcube',
+                            date: '2024-11-02'
+                        },
+                        {
+                            title: '20 New Drugs Expected to be Approved in China in 2025, Innovent Biologics and Simcere Leading',
+                            summary: 'NMPA approved over 110 innovative drugs in 2024, a significant increase from last year. Domestic new drugs reached 42, while imported new drugs totaled 69. With the rise of Chinese local innovative pharmaceutical companies, the proportion of innovative drugs first launched globally in China continues to increase.',
+                            source: 'Entropy Pharma',
+                            date: '2024-12-25'
+                        },
+                        {
+                            title: 'Hengrui Medicine\'s Innovative Drug Zemetostat Tablets Approved for Marketing',
+                            summary: 'The National Medical Products Administration conditionally approved the marketing of zemetostat tablets, a Class 1 innovative drug reported by Jiangsu Hengrui Medicine Co., Ltd., through priority review and approval procedures. The drug is indicated for adult patients with relapsed or refractory peripheral T-cell lymphoma who have received at least one prior systemic therapy.',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: 'Boehringer Ingelheim\'s Zongertinib Tablets Approved, World\'s First HER2 TKI',
+                            summary: 'According to NMPA website, Boehringer Ingelheim\'s zongertinib tablets marketing application has been approved for treating adult patients with unresectable locally advanced or metastatic non-small cell lung cancer with HER2-activating mutations who have received at least one prior systemic therapy. This drug is the world\'s first and currently only approved oral HER2 tyrosine kinase inhibitor.',
+                            source: 'NMPA',
+                            date: '2024-08-29'
+                        },
+                        {
+                            title: '2023-2024 Pharmaceutical Industry Policy Review: Medical Insurance Negotiations and Volume-based Procurement Continue',
+                            summary: 'The 2023 national negotiation results showed that 143 off-catalog drugs participated in negotiations, with 121 successful negotiations/bidding, a success rate of 84.6% and an average price reduction of 61.7%. Medical insurance catalog adjustments and volume-based procurement will continue with expanded quantity and scope.',
+                            source: 'China Pharmaceutical Industry Information Center',
+                            date: '2024-01-15'
+                        },
+                        {
+                            title: 'Innovative Drug Market Flourishing, Expected to Reach 700 Billion Yuan in 2024',
+                            summary: 'According to the "2022-2027 China Innovative Drug Industry Development Report", the market size reached 678.5 billion yuan in 2022, up 7.6% year-on-year. Influenced by policies, medical insurance adjustments, and increased R&D investment, market prospects are optimistic. It is expected to increase to 709.7 billion yuan in 2023 and reach 753.4 billion yuan in 2024.',
+                            source: 'Industrial Research Institute',
+                            date: '2024-03-10'
+                        },
+                        {
+                            title: 'BD Boom Continues, China Innovative Drug License-out Upfront Payments Exceed Primary Market Financing',
+                            summary: 'Following 2023 when BD upfront payments exceeded IPOs to become the second largest financing channel for domestic innovative pharmaceutical companies, starting in 2024, the total upfront payments for China innovative drug license-outs have continuously exceeded primary market financing totals. Behind this, on one hand, Biotechs are reluctantly selling, and on the other hand, multinational companies are continuously increasing their investment in Chinese innovation.',
+                            source: 'Pharmcube',
+                            date: '2024-10-15'
+                        },
+                        {
+                            title: 'BeiGene\'s Zanubrutinib Global Sales Exceed $1 Billion Milestone',
+                            summary: 'As BeiGene\'s first "blockbuster" drug, zanubrutinib has seen continuous sales growth since its U.S. launch in November 2019. In 2023, zanubrutinib\'s global sales had already exceeded the $1 billion milestone, reaching $1.3 billion, quickly joining the ranks of "blockbuster" drugs.',
+                            source: 'BeiGene',
+                            date: '2024-02-20'
+                        }
+                    ]
+                }
+            }
+        };
+        
+        // 当前语言
+        let currentLanguage = 'zh-cn';
+        
+        // 语言切换函数
+         function switchLanguage(lang) {
+             currentLanguage = lang;
+             const content = languageContent[lang];
+             
+             // 更新页面标题
+             document.title = content.title;
+             
+             // 更新hero区域
+             const heroTitle = document.querySelector('.hero-title');
+             const heroSubtitle = document.querySelector('.hero-subtitle');
+             if (heroTitle) heroTitle.textContent = content.heroTitle;
+             if (heroSubtitle) heroSubtitle.textContent = content.heroSubtitle;
+             
+             // 更新hero区域的图片文字
+             const heroImages = document.querySelectorAll('.hero-image');
+             heroImages.forEach((img, index) => {
+                 if (index < content.heroImages.length) {
+                     img.innerHTML = content.heroImages[index];
+                 }
+             });
+             
+             // 更新导航菜单
+             const navLinks = document.querySelectorAll('.nav-menu a');
+             navLinks.forEach((link, index) => {
+                 if (index < content.navItems.length) {
+                     link.textContent = content.navItems[index];
+                 }
+             });
+             
+             // 更新主要内容区域的标题
+             const sectionTitles = document.querySelectorAll('.section-title');
+             if (sectionTitles.length >= 3) {
+                 sectionTitles[0].textContent = content.companyIntro;
+                 sectionTitles[1].textContent = content.companyDynamics;
+                 sectionTitles[2].textContent = content.coreBusiness;
+             }
+             
+             // 更新公司简介文字
+             const companyIntroText = document.querySelector('.company-intro p');
+             if (companyIntroText) {
+                 companyIntroText.textContent = content.companyIntroText;
+             }
+             
+             // 更新新闻标题
+             const newsLinks = document.querySelectorAll('.news-title');
+             newsLinks.forEach((link, index) => {
+                 if (index < content.newsItems.length) {
+                     link.textContent = content.newsItems[index];
+                 }
+             });
+             
+             // 更新业务项目
+             const businessTitles = document.querySelectorAll('.product-item h4');
+             const businessDescriptions = document.querySelectorAll('.product-item p');
+             businessTitles.forEach((title, index) => {
+                 if (index < content.businessItems.titles.length) {
+                     title.textContent = content.businessItems.titles[index];
+                 }
+             });
+             businessDescriptions.forEach((desc, index) => {
+                 if (index < content.businessItems.descriptions.length) {
+                     desc.textContent = content.businessItems.descriptions[index];
+                 }
+             });
+             
+             // 更新侧边栏内容
+             const sidebarTitles = document.querySelectorAll('.sidebar-item h3');
+             const sidebarDescriptions = document.querySelectorAll('.sidebar-content p');
+             const sidebarButtons = document.querySelectorAll('.sidebar-btn');
+             
+             sidebarTitles.forEach((title, index) => {
+                 if (index < content.sidebarItems.titles.length) {
+                     title.textContent = content.sidebarItems.titles[index];
+                 }
+             });
+             
+             sidebarDescriptions.forEach((desc, index) => {
+                 if (index < content.sidebarItems.descriptions.length) {
+                     desc.textContent = content.sidebarItems.descriptions[index];
+                 }
+             });
+             
+             sidebarButtons.forEach((btn, index) => {
+                 if (index < content.sidebarItems.buttons.length) {
+                     btn.textContent = content.sidebarItems.buttons[index];
+                 }
+             });
+             
+             // 更新关于我们页面的内容
+             if (content.aboutPage) {
+                 const aboutSectionTitles = document.querySelectorAll('.content-left .section-title');
+                 aboutSectionTitles.forEach((title, index) => {
+                     if (index < content.aboutPage.sectionTitles.length) {
+                         title.textContent = content.aboutPage.sectionTitles[index];
+                     }
+                 });
+                 
+                 // 更新关于我们页面的详细内容
+                 if (content.aboutPage.businessContent) {
+                     // 更新主营业务的标题和描述
+                     const businessTitles = document.querySelectorAll('.content-left .product-item h4');
+                     const businessDescs = document.querySelectorAll('.content-left .product-item p');
+                     
+                     if (businessTitles.length >= 4 && businessDescs.length >= 4) {
+                         businessTitles[0].textContent = content.aboutPage.businessContent.distribution.title;
+                         businessDescs[0].textContent = content.aboutPage.businessContent.distribution.description;
+                         
+                         businessTitles[1].textContent = content.aboutPage.businessContent.logistics.title;
+                         businessDescs[1].textContent = content.aboutPage.businessContent.logistics.description;
+                         
+                         businessTitles[2].textContent = content.aboutPage.businessContent.consulting.title;
+                         businessDescs[2].textContent = content.aboutPage.businessContent.consulting.description;
+                         
+                         businessTitles[3].textContent = content.aboutPage.businessContent.ecommerce.title;
+                         businessDescs[3].textContent = content.aboutPage.businessContent.ecommerce.description;
+                     }
+                 }
+                 
+                 // 更新联系我们的内容
+                 if (content.aboutPage.contactContent) {
+                     const contactItems = document.querySelectorAll('.content-left .contact-item');
+                     if (contactItems.length >= 6) {
+                         // 总部地址
+                         const headquartersTitle = contactItems[0].querySelector('h4');
+                         const headquartersText = contactItems[0].querySelector('p');
+                         if (headquartersTitle) headquartersTitle.textContent = content.aboutPage.contactContent.headquarters.title;
+                         if (headquartersText) headquartersText.innerHTML = content.aboutPage.contactContent.headquarters.address;
+                         
+                         // 分支机构
+                         const branchesTitle = contactItems[1].querySelector('h4');
+                         const branchesText = contactItems[1].querySelector('p');
+                         if (branchesTitle) branchesTitle.textContent = content.aboutPage.contactContent.branches.title;
+                         if (branchesText) branchesText.innerHTML = content.aboutPage.contactContent.branches.locations;
+                         
+                         // 股票信息
+                         const stockTitle = contactItems[2].querySelector('h4');
+                         const stockText = contactItems[2].querySelector('p');
+                         if (stockTitle) stockTitle.textContent = content.aboutPage.contactContent.stock.title;
+                         if (stockText) stockText.innerHTML = content.aboutPage.contactContent.stock.info;
+                         
+                         // 业务咨询
+                         const businessTitle = contactItems[3].querySelector('h4');
+                         const businessText = contactItems[3].querySelector('p');
+                         if (businessTitle) businessTitle.textContent = content.aboutPage.contactContent.business.title;
+                         if (businessText) businessText.innerHTML = content.aboutPage.contactContent.business.services;
+                         
+                         // 客户服务
+                         const serviceTitle = contactItems[4].querySelector('h4');
+                         const serviceText = contactItems[4].querySelector('p');
+                         if (serviceTitle) serviceTitle.textContent = content.aboutPage.contactContent.service.title;
+                         if (serviceText) serviceText.innerHTML = content.aboutPage.contactContent.service.info;
+                         
+                         // 企业荣誉
+                         const honorTitle = contactItems[5].querySelector('h4');
+                         const honorText = contactItems[5].querySelector('p');
+                         if (honorTitle) honorTitle.textContent = content.aboutPage.contactContent.honor.title;
+                         if (honorText) honorText.innerHTML = content.aboutPage.contactContent.honor.awards;
+                     }
+                 }
+             }
+             
+             // 更新新闻页面的内容
+             if (content.newsPage) {
+                 const categoryTabs = document.querySelectorAll('.category-tab');
+                 categoryTabs.forEach((tab, index) => {
+                     if (index < content.newsPage.categoryTabs.length) {
+                         tab.textContent = content.newsPage.categoryTabs[index];
+                     }
+                 });
+                 
+                 const newsSectionTitles = document.querySelectorAll('.news-section .section-title, .content-left .section-title');
+                 newsSectionTitles.forEach((title, index) => {
+                     if (content.newsPage.sectionTitles[index]) {
+                         title.textContent = content.newsPage.sectionTitles[index];
+                     }
+                 });
+                 
+                 // 更新新闻详情页面的标题和返回按钮
+                 const newsDetailTitle = document.querySelector('.news-detail-title');
+                 if (newsDetailTitle && newsDetailTitle.closest('.section-title')) {
+                     newsDetailTitle.closest('.section-title').textContent = content.newsPage.newsDetailTitle;
+                 }
+                 
+                 const backButton = document.querySelector('.back-btn');
+                 if (backButton) {
+                     backButton.textContent = content.newsPage.backButton;
+                 }
+                 
+                 // 更新新闻列表的详细内容
+                 if (content.newsPage.newsContent) {
+                     const newsItems = document.querySelectorAll('.content-left .news-item');
+                     newsItems.forEach((item, index) => {
+                         if (index < content.newsPage.newsContent.length) {
+                             const newsData = content.newsPage.newsContent[index];
+                             
+                             const titleElement = item.querySelector('h3');
+                             if (titleElement) titleElement.textContent = newsData.title;
+                             
+                             const summaryElement = item.querySelector('p');
+                             if (summaryElement) summaryElement.textContent = newsData.summary;
+                             
+                             const sourceElement = item.querySelector('.news-source');
+                             if (sourceElement) sourceElement.textContent = newsData.source;
+                             
+                             const dateElement = item.querySelector('.news-date');
+                             if (dateElement) dateElement.textContent = newsData.date;
+                         }
+                     });
+                 }
+             }
+             
+             // 更新HTML lang属性
+             document.documentElement.lang = lang === 'zh-tw' ? 'zh-TW' : (lang === 'en' ? 'en' : 'zh-CN');
+         }
+        
+        // 绑定语言切换事件
+        function bindLanguageSwitcher() {
+            const languageLinks = document.querySelectorAll('.top-nav a');
+            languageLinks.forEach((link, index) => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有活跃状态
+                    languageLinks.forEach(l => l.classList.remove('active-lang'));
+                    // 添加当前活跃状态
+                    this.classList.add('active-lang');
+                    
+                    // 根据索引切换语言
+                    switch(index) {
+                        case 0: // 简体
+                            switchLanguage('zh-cn');
+                            break;
+                        case 1: // 繁体
+                            switchLanguage('zh-tw');
+                            break;
+                        case 2: // English
+                            switchLanguage('en');
+                            break;
+                    }
+                });
+            });
+            
+            // 默认激活简体中文
+            if (languageLinks.length > 0) {
+                languageLinks[0].classList.add('active-lang');
+            }
+        }
+        
+        // 在页面加载完成后绑定语言切换器
+        document.addEventListener('DOMContentLoaded', function() {
+            bindLanguageSwitcher();
+            // 初始化默认语言
+            switchLanguage('zh-cn');
+        });
+        
     </script>
 </body>
 </html>
