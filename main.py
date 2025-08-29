@@ -272,6 +272,10 @@ async def read_jointown():
 async def read_about_chuangmei():
     return FileResponse("about_chuangmei.html")
 
+@app.get("/news")
+async def read_news():
+    return FileResponse("news.html")
+
 # API状态检查
 @app.get("/api/status")
 async def api_status():
