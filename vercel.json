@@ -2,13 +2,33 @@
   "version": 2,
   "builds": [
     {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/jointown_style",
+      "dest": "/jointown_style.html"
+    },
+    {
+      "src": "/about_chuangmei",
+      "dest": "/about_chuangmei.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/chat",
       "dest": "/api/index.py"
     }
   ]
