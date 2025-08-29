@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创美医药 - 责任 专业 纪律 真实 进取</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 顶部导航栏 */
+        .top-nav {
+            background: #f8f9fa;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .top-nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .top-nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 12px;
+        }
+
+        .top-nav a:hover {
+            color: #007bff;
+        }
+
+        /* 主导航栏 */
+        .main-nav {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin-right: 40px;
+        }
+
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 20px 0;
+            display: block;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #007bff;
+        }
+
+        .nav-menu .active {
+            background: #007bff;
+            color: white !important;
+            padding: 20px 15px;
+        }
+
+        /* 轮播图区域 */
+        .hero-section {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #ffffff 0%, #87ceeb 50%, #4682b4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c5aa0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(-100px);
+            margin-bottom: 60px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-images {
+            position: absolute;
+            top: 55%;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            padding: 15px;
+            line-height: 1.3;
+            transform: perspective(1000px) rotateY(-15deg);
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .content-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .content-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 内容模块样式 */
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        .section-icon {
+            width: 20px;
+            height: 20px;
+            background: #007bff;
+            border-radius: 3px;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        /* 公司简介 */
+        .company-intro {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .company-intro h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .company-intro p {
+            margin-bottom: 15px;
+        }
+
+        /* 关于创美专用样式 */
+        .about-company {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .about-company h2 {
+            color: #2c5aa0;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #87ceeb;
+            padding-bottom: 15px;
+        }
+
+        .about-company h3 {
+            color: #4682b4;
+            font-size: 24px;
+            margin: 30px 0 20px 0;
+        }
+
+        .about-company p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #333;
+        }
+
+        .highlight-info {
+            background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #4682b4;
+        }
+
+        .highlight-info p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .highlight-info strong {
+            color: #2c5aa0;
+        }
+
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            border-radius: 12px;
+            border: 2px solid #87ceeb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #4682b4;
+            font-weight: 500;
+        }
+
+        .business-overview h3 {
+            color: #2c5aa0;
+            font-size: 28px;
+            margin: 40px 0 25px 0;
+            text-align: center;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .business-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #4682b4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .business-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .business-card h4 {
+            color: #2c5aa0;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .business-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* 公司动态 */
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-title {
+            color: #333;
+            text-decoration: none;
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .news-title:hover {
+            color: #007bff;
+        }
+
+        .news-date {
+            color: #999;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        /* 右侧栏目 */
+        .sidebar-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-icon {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sidebar-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .sidebar-btn:hover {
+            background: #0056b3;
+        }
+
+        /* 产品展示 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: #007bff;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-nav .container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu li {
+                margin: 0 10px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hero-images {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="top-nav">
+        <div class="container">
+            <a href="#">简体</a>
+            <a href="#">繁体</a>
+            <a href="#">English</a>
+        </div>
+    </div>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">🏥 创美医药</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" id="home-link">首页</a></li>
+                <li><a href="#" class="nav-link" id="about-link">关于创美</a></li>
+                <li><a href="#">新闻资讯</a></li>
+                <li><a href="#">企业招聘</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">投资者关系</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播图区域 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">责任 专业 纪律 真实 进取</h1>
+            <p class="hero-subtitle">Responsibility Professional Discipline Truth Enterprising</p>
+        </div>
+        <div class="hero-images">
+            <div class="hero-image">医疗设备<br>监控中心</div>
+            <div class="hero-image">专业团队<br>协作办公</div>
+            <div class="hero-image">现代化<br>生产车间</div>
+            <div class="hero-image">智能物流<br>配送系统</div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <div class="main-content">
+        <div class="content-left">
+            <!-- 公司简介 -->
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-icon"></div>
+                    <h2 class="section-title">公司简介</h2>
+                </div>
+                <div class="section-content">
+                    <div class="company-intro">
+                        <p>创美医药是一家专注于医药流通领域的现代化企业，致力于为客户提供优质的医药产品和服务。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公司动态 -->
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-icon"></div>
+                    <h2 class="section-title">公司动态</h2>
+                </div>
+                <div class="section-content">
+                    <ul class="news-list">
+                        <li class="news-item">
+                            <a href="#" class="news-title">创美医药2024年营业收入突破500亿元，核心业务持续发力</a>
+                            <span class="news-date">2024-12-14</span>
+                        </li>
+                        <li class="news-item">
+                            <a href="#" class="news-title">智慧医疗，数字化转型助力医药流通行业升级</a>
+                            <span class="news-date">2024-12-06</span>
+                        </li>
+                        <li class="news-item">
+                            <a href="#" class="news-title">创美医药荣获"2024年度最佳医药流通企业"称号</a>
+                            <span class="news-date">2024-11-24</span>
+                        </li>
+                        <li class="news-item">
+                            <a href="#" class="news-title">深化合作，创美医药与多家知名药企签署战略协议</a>
+                            <span class="news-date">2024-11-15</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 产品服务 -->
+            <div class="content-section">
+                <div class="section-header">
+                    <div class="section-icon"></div>
+                    <h2 class="section-title">核心业务</h2>
+                </div>
+                <div class="section-content">
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <div class="product-icon">💊</div>
+                            <h4>药品分销</h4>
+                            <p>专业的药品流通服务，覆盖处方药、非处方药等全品类</p>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🏥</div>
+                            <h4>医疗器械</h4>
+                            <p>提供高品质医疗设备和器械的销售及售后服务</p>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">🚚</div>
+                            <h4>物流配送</h4>
+                            <p>现代化仓储物流体系，确保药品安全高效配送</p>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-icon">📊</div>
+                            <h4>数据服务</h4>
+                            <p>基于大数据的医药市场分析和决策支持服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <!-- 企业邮箱 -->
+            <div class="sidebar-item">
+                <div class="sidebar-header">
+                    <div class="sidebar-icon">🌐</div>
+                    <h3>企业邮箱</h3>
+                </div>
+                <div class="sidebar-content">
+                    <p>安全可靠的企业邮箱服务</p>
+                    <a href="#" class="sidebar-btn">立即登录</a>
+                </div>
+            </div>
+
+            <!-- 供应商服务 -->
+            <div class="sidebar-item">
+                <div class="sidebar-header">
+                    <div class="sidebar-icon">💼</div>
+                    <h3>供应商服务</h3>
+                </div>
+                <div class="sidebar-content">
+                    <p>为供应商提供专业的合作平台</p>
+                    <a href="#" class="sidebar-btn">了解更多</a>
+                </div>
+            </div>
+
+            <!-- 药检查询 -->
+            <div class="sidebar-item">
+                <div class="sidebar-header">
+                    <div class="sidebar-icon">🔍</div>
+                    <h3>药检查询</h3>
+                </div>
+                <div class="sidebar-content">
+                    <p>快速查询药品检验信息</p>
+                    <a href="#" class="sidebar-btn">开始查询</a>
+                </div>
+            </div>
+
+            <!-- 企业QA -->
+            <div class="sidebar-item">
+                <div class="sidebar-header">
+                    <div class="sidebar-icon">❓</div>
+                    <h3>企业QA</h3>
+                </div>
+                <div class="sidebar-content">
+                    <p>常见问题解答和在线客服</p>
+                    <a href="#" class="sidebar-btn">获取帮助</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于创美内容显示区域 -->
+    <div id="about-content" style="display: none; max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <div style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 40px;">
+            <div id="about-content-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航菜单高亮效果
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 只对href为"#"的链接阻止默认行为
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // 保存原始内容
+            const heroSection = document.querySelector('.hero-section');
+            const mainContent = document.querySelector('.main-content');
+            const aboutContentDiv = document.getElementById('about-content');
+            const originalHeroContent = heroSection.innerHTML;
+            const originalMainContent = mainContent.innerHTML;
+            
+            // 首页导航链接点击事件
+            const homeLink = document.querySelector('.nav-menu li:first-child a');
+            homeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 恢复原始内容
+                heroSection.innerHTML = originalHeroContent;
+                mainContent.innerHTML = originalMainContent;
+                
+                // 重新绑定事件监听器
+                bindEventListeners();
+                
+                // 滚动到顶部
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 关于创美链接点击事件
+            document.getElementById('about-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                // 获取关于创美页面内容
+                fetch('/about_chuangmei')
+                    .then(response => response.text())
+                    .then(html => {
+                        // 解析HTML并提取主要内容
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const contentSections = doc.querySelectorAll('.content .section');
+                        
+                        // 构建关于创美的内容
+                        let aboutContent = '';
+                        contentSections.forEach(section => {
+                            aboutContent += '<div class="content-section about-company">' + section.innerHTML + '</div>';
+                        });
+                        
+                        // 替换主内容区域
+                        document.querySelector('.content-left').innerHTML = aboutContent;
+                        
+                        // 更新导航高亮
+                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    })
+                    .catch(error => {
+                        console.error('加载关于创美页面失败:', error);
+                    });
+            });
+            
+
+            
+            // 绑定其他事件监听器的函数
+            function bindEventListeners() {
+                // 产品项目悬停效果
+                const productItems = document.querySelectorAll('.product-item');
+                productItems.forEach(item => {
+                    item.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-5px) scale(1.02)';
+                    });
+                    item.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                // 新闻项目点击效果
+                const newsItems = document.querySelectorAll('.news-title');
+                newsItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        alert('新闻详情页面开发中...');
+                    });
+                });
+            }
+            
+            // 初始绑定事件监听器
+            bindEventListeners();
+
+
+        });
+    </script>
+</body>
+</html>
