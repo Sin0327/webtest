@@ -202,8 +202,91 @@
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .section-header {
+        
+        /* 关于创美页面样式 */
+        .company-intro h3 {
+            color: #2c5aa0;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e8f4fd;
+            padding-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f4fd 100%);
+            border-left: 4px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: #f8fbff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #2c5aa0;
+        }
+        
+        .contact-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item p {
+             color: #666;
+             margin: 0;
+         }
+         
+         .product-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 25px;
+             margin-top: 20px;
+         }
+         
+         .product-item {
+             background: white;
+             border: 1px solid #e8f4fd;
+             border-radius: 12px;
+             padding: 25px;
+             text-align: center;
+             transition: all 0.3s ease;
+             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+         }
+         
+         .product-item:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 8px 25px rgba(44, 90, 160, 0.15);
+             border-color: #2c5aa0;
+         }
+         
+         .product-icon {
+             font-size: 2.5em;
+             margin-bottom: 15px;
+             display: block;
+         }
+         
+         .product-item h4 {
+             color: #2c5aa0;
+             margin-bottom: 15px;
+             font-size: 1.3em;
+         }
+ 
+         .section-header {
             background: #f8f9fa;
             padding: 15px 20px;
             border-bottom: 1px solid #e9ecef;
@@ -748,31 +831,131 @@
             // 关于创美链接点击事件
             document.getElementById('about-link').addEventListener('click', function(e) {
                 e.preventDefault();
-                // 获取关于创美页面内容
-                fetch('/about_chuangmei')
-                    .then(response => response.text())
-                    .then(html => {
-                        // 解析HTML并提取主要内容
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const contentSections = doc.querySelectorAll('.content .section');
-                        
-                        // 构建关于创美的内容
-                        let aboutContent = '';
-                        contentSections.forEach(section => {
-                            aboutContent += '<div class="content-section about-company">' + section.innerHTML + '</div>';
-                        });
-                        
-                        // 替换主内容区域
-                        document.querySelector('.content-left').innerHTML = aboutContent;
-                        
-                        // 更新导航高亮
-                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                        this.classList.add('active');
-                    })
-                    .catch(error => {
-                        console.error('加载关于创美页面失败:', error);
-                    });
+                
+                // 构建关于创美的内容
+                const aboutContent = `
+                    <div class="content-section">
+                        <div class="section-header">
+                            <div class="section-icon"></div>
+                            <h2 class="section-title">关于创美药业</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="company-intro">
+                                <h3>公司简介</h3>
+                                <p>创美药业股份有限公司（股份代号：2289.HK）是华南地区领先的医药分销商之一，于2000年创立，起源于粤东地区汕头市。经过24年的快速发展，公司已成长为华南地区第三大民营医药分销商，拥有全面的分销网络覆盖华南地区及福建省等周边地区。</p>
+                                
+                                <div class="highlight-box">
+                                    <h4>企业规模</h4>
+                                    <p>截至2024年，公司分销网络覆盖超过14,429名客户，其中包括685名分销商、9,533名零售药店、4,211名医院诊所及卫生站。年营业收入达48.62亿港元，在2019年广东企业500强中排名第297位，广东民营企业100强中排名第82位。</p>
+                                </div>
+                                
+                                <div class="highlight-box">
+                                    <h4>发展战略</h4>
+                                    <p>公司坚持"深耕广东，辐射周边"的发展战略，立足于汕头，在广州、珠海、惠州、佛山及深圳成立子公司，拥有四个现代化医药物流中心，专业的营销服务团队以及运输服务团队。</p>
+                                </div>
+                                
+                                <div class="highlight-box">
+                                    <h4>发展历程</h4>
+                                    <p><strong>2000年</strong> - 公司创立于汕头，起源于粤东地区<br>
+                                    <strong>2011年</strong> - 在佛山设立广东创美，开始布局珠三角<br>
+                                    <strong>2015年</strong> - B2B电子商务平台"创美e药"开始试运营<br>
+                                    <strong>2017年</strong> - 并购珠海创美和广州创美，全面布局珠三角地区<br>
+                                    <strong>2017年</strong> - 在香港联交所主板成功上市（股份代号：2289.HK）</p>
+                                </div>
+                                
+                                <div class="highlight-box">
+                                    <h4>领导团队</h4>
+                                    <p>公司由董事会主席严京斌先生和副主席兼首席执行官姚创龙先生领导，拥有丰富的医药分销行业经验和深刻的市场理解，致力于为股东创造最大回报。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <div class="section-header">
+                            <div class="section-icon"></div>
+                            <h2 class="section-title">主营业务</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="product-grid">
+                                <div class="product-item">
+                                    <div class="product-icon">💊</div>
+                                    <h4>医药分销业务</h4>
+                                    <p>作为核心业务，公司从医药生产商及分销供应商采购药品，向分销商、零售药店、民营医院、诊所、卫生站等客户提供销售服务。产品组合包括西药、中成药、保健产品、中药药材及中药饮片、医疗器械及化妆品等多元化医药产品，绝大部分营业收入来自药品分销业务。</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">🚚</div>
+                                    <h4>第三方物流服务</h4>
+                                    <p>公司拥有四个现代化医药物流中心，依托先进的物流管理系统和专业的冷链配送能力，为制药企业提供专业的仓储、配送等第三方物流服务，确保药品在流通过程中的质量和安全，提高分销覆盖范围及营运效率。</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">📊</div>
+                                    <h4>医药产品咨询服务</h4>
+                                    <p>凭借对医药分销市场的深刻理解和丰富的服务经验，为客户提供专业的医药产品咨询服务，包括市场分析、产品推广策略制定、行业趋势研判等，帮助合作伙伴更好地开拓市场，满足客户多样性需求。</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">💻</div>
+                                    <h4>B2B电子商务平台</h4>
+                                    <p>"创美e药"B2B电子商务平台于2015年开始运营，截至2016年已有4,759位注册客户，主要为零售药店。该平台为客户提供更便利的服务，优化用户体验，提高系统稳定性，拓宽客户群，2016年贡献营业额约1.77亿人民币。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <div class="section-header">
+                            <div class="section-icon"></div>
+                            <h2 class="section-title">联系我们</h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <h4>总部地址</h4>
+                                    <p>广东省汕头市龙湖区珠津工业区<br>
+                                    创美药业股份有限公司</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>分支机构</h4>
+                                    <p>广州 | 珠海 | 惠州 | 佛山 | 深圳<br>
+                                    覆盖华南地区及福建省周边地区</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>股票信息</h4>
+                                    <p>香港联交所主板上市<br>
+                                    股份代号：2289.HK</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>业务咨询</h4>
+                                    <p>医药分销 | 第三方物流<br>
+                                    产品咨询 | 电商平台服务</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>客户服务</h4>
+                                    <p>服务客户超过14,429家<br>
+                                    分销商 | 零售药店 | 医疗机构</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>企业荣誉</h4>
+                                    <p>2019年广东企业500强 第297位<br>
+                                    2019年广东民营企业100强 第82位</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // 替换主内容区域
+                document.querySelector('.content-left').innerHTML = aboutContent;
+                
+                // 更新导航高亮
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 重新绑定事件监听器
+                bindEventListeners();
+                
+                // 滚动到顶部
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
 
