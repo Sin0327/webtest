@@ -276,6 +276,10 @@ async def read_about_chuangmei():
 async def read_news():
     return FileResponse("news.html")
 
+@app.get("/图片1.png")
+async def read_logo_image():
+    return FileResponse("图片1.png")
+
 # API状态检查
 @app.get("/api/status")
 async def api_status():
