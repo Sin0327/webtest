@@ -1,16 +1,7 @@
 {
   "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/jointown_style",
-      "destination": "/jointown_style.html"
-    },
-    {
-      "source": "/about_chuangmei",
-      "destination": "/about_chuangmei.html"
-    }
+    { "source": "/", "destination": "/jointown_style.html" },
+    { "source": "/jointown_style", "destination": "/jointown_style.html" },
+    { "source": "/about_chuangmei", "destination": "/about_chuangmei.html" }
   ]
 }
